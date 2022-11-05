@@ -1,0 +1,12 @@
+body {
+    --navigator-z-index: 10;
+    --foldPanel-z-index: 10;
+    --color-blue-main: #5c7cfa;
+    --fold-z-index: 10;
+    --login-z-index: 11;
+    --search-z-index: 12;
+    --main-background-color: linear-gradient(to right, #ffe3e3, #bac8ff, #90d7ec);
+    --page-top-height: 55vh;
+    --footer-height: 15vh;
+    --container-height: 30vh;
+}
