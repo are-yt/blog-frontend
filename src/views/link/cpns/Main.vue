@@ -95,6 +95,7 @@ const pushComment = (
   const index = list.value.findIndex(
     (item: any) => item.commentId === parent_id
   )
+  console.log(accountStore.account.avatar)
   list.value[index].children.push({
     commentId,
     name: accountStore.account.name,

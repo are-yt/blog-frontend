@@ -8,7 +8,12 @@
       <div class="container">
         <div class="list">
           <template v-if="list.length">
-            <div v-for="item in list" :key="item.id" class="item" @click="articleDetail(item.id)">
+            <div
+              v-for="item in list"
+              :key="item.id"
+              class="item"
+              @click="articleDetail(item.id)"
+            >
               <img :src="item.surface" />
               <div class="info">
                 <div>{{ item.title }}</div>
@@ -28,7 +33,13 @@
             </div>
           </template>
         </div>
-        <ElButton v-if="total > list.length" type="primary" class="btn" @click="getArticleByTag">加载更多</ElButton>
+        <ElButton
+          v-if="total > list.length"
+          type="primary"
+          class="btn"
+          @click="getArticleByTag"
+          >加载更多</ElButton
+        >
       </div>
     </Transition>
   </div>
@@ -76,6 +87,7 @@ const articleDetail = (id: number) => {
 <style scoped lang="less">
 .container {
   padding: 1rem 0;
+  min-height: var(--container-height);
   background: var(--main-background-color);
   .list {
     width: 70%;

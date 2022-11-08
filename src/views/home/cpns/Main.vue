@@ -13,7 +13,11 @@
         <!-- 帖子列表 -->
         <div class="blog-list">
           <template v-for="(item, index) in articleList" :key="item.articleId">
-            <BlogItem :item="item" :index="index" @click="articleDetail(item.articleId)" />
+            <BlogItem
+              :item="item"
+              :index="index"
+              @click="articleDetail(item.articleId)"
+            />
           </template>
         </div>
       </div>
@@ -21,9 +25,9 @@
         <div class="info">
           <img class="avatar" :src="adminStore.adminInfo.avatar" />
           <div class="nickname">{{ adminStore.adminInfo.nickname }}</div>
-          <div class="join">
+          <div class="join" @click="joinBookSign">
             <i class="iconfont icon-biaoqian_o"></i>
-            <span @click="joinBookSign">加入书签</span>
+            <span>加入书签</span>
             <div></div>
           </div>
           <div class="data">
@@ -136,7 +140,10 @@ onMounted(() => {
         pageIndex.value += 1
         getArticleList()
       }
-      if (
+      if (articleList.value.length >= 9) {
+        ElMessage.success({ message: '最多加载9条帖子信息' })
+        scope.stop()
+      } else if (
         oldval - val < 0 &&
         scrollHeight - val <= 0 &&
         articleTotal.value === articleList.value.length
@@ -178,6 +185,7 @@ const articleDetail = (id: number) => {
 }
 .main {
   padding: 20px;
+  min-height: 80vh;
   background: var(--main-background-color);
   display: flex;
   justify-content: space-between;
@@ -315,7 +323,6 @@ const articleDetail = (id: number) => {
             div {
               margin: 0.5rem 0;
             }
-            cursor: pointer;
           }
         }
       }

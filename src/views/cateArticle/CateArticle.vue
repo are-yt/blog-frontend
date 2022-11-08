@@ -88,6 +88,7 @@ const articleDetail = (id: number) => {
 <style scoped lang="less">
 .container {
   padding: 1rem 0;
+  min-height: var(--container-height);
   background: var(--main-background-color);
   .list {
     width: 70%;

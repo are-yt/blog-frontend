@@ -22,7 +22,6 @@ import { request } from '@/request'
 import { useAdmin, useAccount, useFooter } from '@/store'
 const adminStore = useAdmin()
 const footerStore = useFooter()
-
 const y = useScroll().y
 
 // 请求站主信息

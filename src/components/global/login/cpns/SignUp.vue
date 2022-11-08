@@ -125,7 +125,7 @@ const register = () => {
     return ElMessage.warning({ message: '请先输入邮箱' })
   } else if (!registry.code) {
     return ElMessage.warning({ message: '请输入验证码' })
-  } else if (!registry.password.trim() || registry.password.trim().length < 7) {
+  } else if (!registry.password.trim() || registry.password.trim().length < 6) {
     return ElMessage.warning({ message: '密码长度至少为6位' })
   } else if (!registry.name.trim()) {
     return ElMessage.warning({ message: '需要一个昵称' })

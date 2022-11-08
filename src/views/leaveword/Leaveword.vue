@@ -13,10 +13,9 @@
       <input
         v-model="content"
         type="text"
-        placeholder="这里留言..."
+        placeholder="Enter键发送留言..."
         @keyup.enter.exact="send"
       />
-      <span @click="send">发送</span>
     </div>
   </div>
 </template>
@@ -68,7 +67,6 @@ const send = () => {
         return ElMessage.warning({ message: res.data.message })
       }
       // 留言成功
-      content.value = ''
       ElMessage.success({ message: '留言成功' })
       barrageList.value.push({
         id: accountStore.account.id,
@@ -80,6 +78,7 @@ const send = () => {
         speed: 10 - Math.floor(Math.random() * 5) + 's',
         avatar: accountStore.account.avatar
       })
+      content.value = ''
     })
 }
 const getList = () => {
@@ -152,7 +151,7 @@ onBeforeUnmount(() => {
       border-radius: 10px;
       background: transparent;
       color: #fff;
-      width: 117px;
+      width: 167px;
       transition: width 0.5s;
       &:focus {
         outline: none;

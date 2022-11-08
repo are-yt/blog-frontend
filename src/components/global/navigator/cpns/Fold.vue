@@ -2,6 +2,11 @@
   <div v-fold-scroll class="fold" @click.self="toggle">
     <div class="fold-content">
       <img
+        v-if="adminStore.adminInfo.avatar"
+        :src="adminStore.adminInfo.avatar"
+      />
+      <img
+        v-else
         src="https://img0.baidu.com/it/u=2230067592,4086528048&fm=253&fmt=auto&app=138&f=JPEG?w=504&h=500"
       />
       <div class="nav">
