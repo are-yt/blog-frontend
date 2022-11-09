@@ -93,6 +93,7 @@ const login = () => {
         avatar,
         token
       }
+      console.log(obj)
       // 保存到本地
       localStorage.setItem('cyblog-user-info', JSON.stringify(obj))
       // 保存到store

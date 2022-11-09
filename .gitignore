@@ -1,6 +1,6 @@
 .DS_Store
 node_modules
-/dist
+# /dist 要部署github pages不能忽略上传dist目录
 
 
 # local env files

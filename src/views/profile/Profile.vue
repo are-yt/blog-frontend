@@ -22,7 +22,7 @@
               <label class="choose-avatar-btn" for="avatar">
                 <span>选择头像</span>
               </label>
-              <input id="avatar" ref="file" type="file" />
+              <input id="avatar" ref="file" type="file" @change="fileChange" />
               <ElButton class="upload" type="success" @click="upload">
                 更换
               </ElButton>
@@ -114,6 +114,10 @@ const updateName = () => {
       localStorage.setItem('cyblog-user-info', JSON.stringify(local))
       name.value = ''
     })
+}
+// 选择了新头像
+const fileChange = () => {
+  ElMessage.success({ message: '选择成功' })
 }
 </script>
 

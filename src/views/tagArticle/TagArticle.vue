@@ -75,7 +75,6 @@ const getArticleByTag = () => {
       pageSize = 3
       list.value = res.data.list
       total.value = res.data.total
-      console.log(list.value)
     })
 }
 getArticleByTag()

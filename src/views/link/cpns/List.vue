@@ -5,19 +5,39 @@
       <span>大佬链接</span>
     </div>
     <div class="wrapper">
-      <div v-for="item in 9" :key="item" class="item">
+      <div
+        v-for="item in list"
+        :key="item.id"
+        class="item"
+        @click="openLink(item.url)"
+      >
         <div class="layer"></div>
-        <img src="~@/assets/imgs/1.jpg" />
+        <img :src="item.logo" />
         <div class="info">
-          <div class="name">友链名称</div>
-          <div class="desc">关于此链接的一些描述</div>
+          <div class="name">{{ item.name }}</div>
+          <div class="desc">{{ item.description }}</div>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue'
+import { request } from '@/request'
+const list = ref<any>([])
+request
+  .request({
+    url: '/links/list',
+    method: 'GET'
+  })
+  .then(res => {
+    list.value = res.data
+  })
+const openLink = (url: string) => {
+  window.open(url)
+}
+</script>
 
 <style scoped lang="less">
 .list {

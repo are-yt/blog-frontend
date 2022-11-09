@@ -9,7 +9,7 @@
         v-model="registry.email"
         class="inp"
         type="text"
-        placeholder="邮箱号"
+        placeholder="qq邮箱号"
         clearable
         size="large"
         @keyup.enter="register"

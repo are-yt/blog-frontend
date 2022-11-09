@@ -64,7 +64,7 @@ if (userInfo) {
 <style src="normalize.css"></style>
 <style src="./assets/css/common.css"></style>
 <style src="./assets/css/styles.css"></style>
-<style src="./assets/css/font/icon.css"></style>
+<style src="./assets/css/font/iconfont.css"></style>
 <style scoped lang="less">
 body,
 #app {

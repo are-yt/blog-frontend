@@ -123,8 +123,7 @@ onBeforeUnmount(() => {
 .leaveword {
   height: 100vh;
   overflow: hidden;
-  background: url('https://img0.baidu.com/it/u=3656528985,1340430298&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500')
-    no-repeat;
+  background: url('http:///p3.qhimg.com/t01abc6e061cae27bc3.jpg') no-repeat;
   background-size: cover;
   background-position: center;
   position: relative;

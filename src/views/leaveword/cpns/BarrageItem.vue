@@ -1,6 +1,7 @@
 <template>
   <div class="barrage-item" :style="{ background: props.bg }">
-    <img src="~@/assets/imgs/avatar.svg" />
+    <img v-if="item.avatar" :src="item.avatar" />
+    <img v-else src="~@/assets/imgs/avatar.svg" />
     <span>{{ props.item.name }}: </span>
     <span>{{ props.item.content }}</span>
   </div>
